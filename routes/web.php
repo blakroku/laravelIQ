@@ -25,5 +25,5 @@ Route::prefix('app/')->group(function () {
     Route::post('posts/store', [PostController::class, 'storePost'])->name('posts.store');
     Route::get('posts/{post}/edit', [PostController::class, 'editPost'])->name('posts.edit');
     Route::put('posts/{post}/update', [PostController::class, 'updatePost'])->name('posts.update');
-
+    Route::delete('posts/{post}/delete', [PostController::class, 'deletePost'])->name('posts.delete');
 });
