@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PostController extends Controller
 {
@@ -35,5 +36,25 @@ class PostController extends Controller
         $author->posts()->create($request->except('author'));
 
         return redirect()->route('posts.index')->with('success', 'Post successfully added');
+    }
+
+    public function editPost(Post $post)
+    {
+        return view('post.edit', ['post' => $post]);
+    }
+
+    public function updatePost(Request $request, Post $post)
+    {
+        $data = $request->validate([
+            'subject' => 'required',
+            'short_description' => 'required',
+            'original_published_at' => 'required',
+            'category' => 'required',
+            'original_post_url' => ['required', Rule::unique('posts')->ignore($post->id)],
+        ]);
+
+        $post->update($data);
+
+        return redirect()->route('posts.index')->with('success', 'Post successfully updated');
     }
 }

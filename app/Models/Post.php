@@ -15,4 +15,8 @@ class Post extends Model
     {
         return $this->belongsTo(Author::class);
     }
+
+    protected $casts = [
+        'original_published_at' => 'date',
+    ];
 }
