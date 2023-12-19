@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function listPosts()
     {
-        return view('post.list-posts');
+        $posts = Post::orderBy('created_at', 'desc')->simplePaginate(20);
+
+        return view('post.list-posts', ['posts' => $posts]);
     }
 
     public function createPost()
