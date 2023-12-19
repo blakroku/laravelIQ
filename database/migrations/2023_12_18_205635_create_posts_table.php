@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('authors', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('introduction')->nullable();
-            $table->string('github_url')->nullable()->unique();
-            $table->string('website_url')->nullable()->unique();
-            $table->string('twitter_url')->nullable()->unique();
+            $table->text('subject');
+            $table->text('short_description');
+            $table->timestamp('original_published_at');
+            $table->foreignId('author_id')->constrained();
+            $table->string('category')->default('Tutorials');
+            $table->text('original_post_url')->unique();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('authors');
+        Schema::dropIfExists('posts');
     }
 };
