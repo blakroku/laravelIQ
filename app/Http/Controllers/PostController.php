@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function listPosts()
     {
-        $posts = Post::orderBy('created_at', 'desc')->simplePaginate(4);
+        $posts = Post::orderBy('created_at', 'desc')->simplePaginate(20);
 
         return view('post.list-posts', ['posts' => $posts]);
     }
@@ -24,16 +24,19 @@ class PostController extends Controller
     public function storePost(Request $request)
     {
         $request->validate([
+            'name' => 'required',
+            'github_url' => '',
+            'stackoverflow_url' => '',
+
             'subject' => 'required',
-            'author' => 'required',
             'short_description' => 'required',
             'original_published_at' => 'required',
             'category' => 'required',
             'original_post_url' => 'required|unique:posts',
         ]);
 
-        $author = Author::create(['name' => $request->author]);
-        $author->posts()->create($request->except('author'));
+        $author = Author::create($request->only('name', 'github_url', 'stackoverflow_url'));
+        $author->posts()->create($request->except('name', 'github_url', 'stackoverflow_url'));
 
         return redirect()->route('posts.index')->with('success', 'Post successfully added');
     }

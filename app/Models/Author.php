@@ -9,7 +9,7 @@ class Author extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'introduction', 'github_url'];
+    protected $fillable = ['name', 'introduction', 'github_url', 'stackoverflow_url'];
 
     public function posts(): \Illuminate\Database\Eloquent\Relations\HasMany
     {

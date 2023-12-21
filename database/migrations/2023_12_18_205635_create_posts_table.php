@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('original_published_at');
             $table->foreignId('author_id')->constrained();
             $table->string('category')->default('Tutorials');
-            $table->text('original_post_url')->unique();
+            $table->text('original_post_url', 255);
             $table->timestamps();
         });
     }

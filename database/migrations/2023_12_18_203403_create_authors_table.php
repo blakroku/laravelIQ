@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('introduction')->nullable();
             $table->string('github_url')->nullable()->unique();
-            $table->string('website_url')->nullable()->unique();
-            $table->string('twitter_url')->nullable()->unique();
+            $table->string('stackoverflow_url')->nullable()->unique();
             $table->timestamps();
         });
     }

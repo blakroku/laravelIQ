@@ -63,11 +63,9 @@
                             <span>category</span>
                             <span>
                                 <select class="border broder-gray-200 rounded px-3 py-1 w-full" name="category" id="category">
-                                    <option value="post">social</option>
-                                    <option value="tutorial">tutorial</option>
-                                    <option value="video">video</option>
-                                    <option value="article">article</option>
-                                    <option value="news">news</option>
+                                     @foreach(\App\Enums\PostCategory::getInstances() as $category)
+                                        <option value="{{ $category->value }}" @if ($category->value == $post->category) {{ 'selected' }} @endif>{{ $category->key }}</option>
+                                    @endforeach
                                 </select>
                             </span>
                             @error('category')

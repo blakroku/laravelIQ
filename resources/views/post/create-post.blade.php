@@ -15,6 +15,42 @@
 
                     @csrf
 
+                    <h1 class="font-black text-xl">Author</h1>
+
+                    <div class="mb-4">
+                        <label for="author">
+                            <span>author</span>
+                            <span>
+                            <input class="border broder-gray-200 rounded px-3 py-1 w-full" type="text" name="name" id="name" placeholder="author name">
+                        </span>
+                            @error('name')
+                            <span class="text-xs text-red-500">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </label>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="author">
+                            <span>Github</span>
+                            <span>
+                                <input class="border broder-gray-200 rounded px-3 py-1 w-full" type="text" name="github_url" id="github_url" placeholder="Github Url">
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="author">
+                            <span>Stackoverflow</span>
+                            <span>
+                                <input class="border broder-gray-200 rounded px-3 py-1 w-full" type="text" name="stackoverflow_url" id="stackoverflow_url" placeholder="Stackoverflow Url">
+                            </span>
+                        </label>
+                    </div>
+
+                    <h1 class="font-black text-xl">Post</h1>
+
                     <div class="mb-4">
                         <label for="subject">
                             <span>subject</span>
@@ -44,29 +80,13 @@
                     </div>
 
                     <div class="mb-4">
-                        <label for="author">
-                            <span>author</span>
-                            <span>
-                            <input class="border broder-gray-200 rounded px-3 py-1 w-full" type="text" name="author" id="author" placeholder="author name">
-                        </span>
-                            @error('author')
-                            <span class="text-xs text-red-500">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </label>
-                    </div>
-
-                    <div class="mb-4">
                         <label for="category">
                             <span>category</span>
                             <span>
                                 <select class="border broder-gray-200 rounded px-3 py-1 w-full" name="category" id="category">
-                                    <option value="post">social</option>
-                                    <option value="tutorial">tutorial</option>
-                                    <option value="video">video</option>
-                                    <option value="article">article</option>
-                                    <option value="news">news</option>
+                                    @foreach(\App\Enums\PostCategory::getInstances() as $category)
+                                        <option value="{{ $category->value }}">{{ $category->key }}</option>
+                                    @endforeach
                                 </select>
                             </span>
                             @error('category')
