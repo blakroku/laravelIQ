@@ -27,11 +27,11 @@
         <div class="container mx-auto px-8 md:px-0">
 {{--            <h1 class="uppercase text-sm tracking-widest font-semibold mb-3">Recent Posts</h1>--}}
             <div class="md:grid grid-cols-3 gap-6">
-                @foreach(\App\Models\Post::all()->take(6) as $post)
+                @foreach(\App\Models\Post::all()->take(10) as $post)
                     <div class="w-full">
                         <div class="rounded-md w-full mb-8 hover:shadow-xl border border-gray-100">
                             <span>
-                                <img class="" src="https://picperf.io/https://laravelnews.s3.amazonaws.com/featured-images/forge-nginx-logs.jpg" alt="">
+                                <img class="" src="{{ asset($post->post_image->cover_image) }}" alt="">
                             </span>
                            <div class="p-6">
                                @php
@@ -43,9 +43,9 @@
                                <h1 class="mt-2 font-black text-gray-700 text-2xl mb-4">
                                    <a  class="hover:text-red-500" href="{{ route('posts.show', [$post->created_at->format('Y'), $post->id]) }}">{{ $post->subject }}</a>
                                </h1>
-                               <div>
-                                   {{ str($post->short_description)->words($truncateLimit) }}
-                               </div>
+{{--                               <div>--}}
+{{--                                   {{ str($post->short_description)->words($truncateLimit) }}--}}
+{{--                               </div>--}}
                            </div>
                         </div>
                     </div>

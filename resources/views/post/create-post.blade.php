@@ -11,7 +11,7 @@
 
         <section class="container mx-auto px-8 sm:px-0 md:px-0 lg:px-0">
             <div class="max-w-[700px] mx-auto">
-                <form action="{{ route('posts.store') }}" method="post">
+                <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
 
                     @csrf
 
@@ -58,6 +58,20 @@
                                 <input class="border broder-gray-200 rounded px-3 py-1 w-full" type="text" name="subject" id="subject" placeholder="subject">
                             </span>
                             @error('subject')
+                            <span class="text-xs text-red-500">
+                                {{ $message }}
+                            </span>
+                            @enderror
+                        </label>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="subject">
+                            <span>Image</span>
+                            <span>
+                                <input class="border broder-gray-200 rounded px-3 py-1 w-full" type="file" name="cover_image" id="cover_image" placeholder="cover_image">
+                            </span>
+                            @error('cover_image')
                             <span class="text-xs text-red-500">
                                 {{ $message }}
                             </span>

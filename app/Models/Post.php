@@ -19,4 +19,9 @@ class Post extends Model
     protected $casts = [
         'original_published_at' => 'date',
     ];
+
+    public function post_image()
+    {
+        return $this->hasOne(PostImage::class);
+    }
 }
