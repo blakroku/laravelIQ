@@ -52,7 +52,7 @@
 
 <footer class="pt-6 my-20">
     <div class="text-center">
-        copyright &copy; {{ date('Y') }} {{ env('APP_NAME') }}. all rights reserved
+        Copyright &copy; {{ date('Y') }} {{ env('APP_NAME') }}. All rights reserved
     </div>
 </footer>
 </body>
