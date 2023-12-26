@@ -28,7 +28,7 @@ class PostController extends Controller
             'github_url' => '',
             'stackoverflow_url' => '',
             'subject' => 'required',
-            'cover_image' => 'required|image|mimes:jpg,jpeg,png,svg,avif|max:2048',
+            'cover_image' => 'required|image|mimes:jpg,jpeg,png,svg,webp|max:2048',
             'short_description' => 'required',
             'original_published_at' => 'required',
             'category' => 'required',

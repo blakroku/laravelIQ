@@ -3,9 +3,9 @@
 
 @include('partials._html_head')
 
-<body class="antialiased">
+<body class="antialiased" style="background-color: #FAF8F7">
 <header>
-    <nav class="bg-red-500 text-white py-2 shadow-gray-400 text-xl px-8 sm:px-0 md:px-0 lg:px-0 font-semibold">
+    <nav class="bg-red-500 text-white py-4 shadow-gray-400 text-xl px-8 sm:px-0 md:px-0 lg:px-0 font-semibold">
         <section class="container mx-auto flex justify-between items-center">
             <aside class="flex space-x-12">
                 <div class="logo font-black">
@@ -13,15 +13,25 @@
                 </div>
             </aside>
             <aside class="left">
-                <a href="javascript:void(0)">
+                <a href="{{ route('home') }}">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
                         </svg>
                     </span>
-                    <span>Menu</span>
+                    <span>Posts</span>
                 </a>
             </aside>
+{{--            <aside class="left">--}}
+{{--                <a href="javascript:void(0)">--}}
+{{--                    <span>--}}
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">--}}
+{{--                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />--}}
+{{--                        </svg>--}}
+{{--                    </span>--}}
+{{--                    <span>Menu</span>--}}
+{{--                </a>--}}
+{{--            </aside>--}}
         </section>
     </nav>
 {{--    <section class="hero">--}}
@@ -40,7 +50,7 @@
 
 @yield('main')
 
-<footer class="pt-6 mt-20">
+<footer class="pt-6 my-20">
     <div class="text-center">
         copyright &copy; {{ date('Y') }} {{ env('APP_NAME') }}. all rights reserved
     </div>
