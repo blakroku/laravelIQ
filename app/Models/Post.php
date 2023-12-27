@@ -24,4 +24,9 @@ class Post extends Model
     {
         return $this->hasOne(PostImage::class);
     }
+
+    public function credits(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Credits::class);
+    }
 }

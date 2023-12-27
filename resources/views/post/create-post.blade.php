@@ -139,6 +139,22 @@
                         </label>
                     </div>
 
+                    <h1 class="font-black text-xl">Credits</h1>
+
+                    <div class="mb-4">
+                        <label for="subject">
+                            <span>Image Url</span>
+                            <span>
+                                <input class="border broder-gray-200 rounded px-3 py-1 w-full" type="text" name="image_url" id="image_url" placeholder="https://example.com/image/url">
+                            </span>
+                            @error('image_url')
+                            <span class="text-xs text-red-500">
+                                {{ $message }}
+                            </span>
+                            @enderror
+                        </label>
+                    </div>
+
                     <div class="mt-5">
                         <button class="border broder-gray-200 px-3 py-1 w-full bg-black text-white rounded" type="submit">add</button>
                     </div>
