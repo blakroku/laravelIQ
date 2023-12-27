@@ -27,10 +27,8 @@
     <section class="mt-12">
         <div class="container mx-auto px-8 md:px-0">
             <header class="text-center my-36">
-                <h1 class="text-5xl font-black mb-3">Discover Insightful Resources: Explore Curated Content Within the
-                    Laravel Ecosystem </h1>
-                <h2 class="text-2xl">Dive into Beginner-Friendly Tutorials and In-Depth <br> Insights for Laravel
-                    Enthusiasts</h2>
+                <h1 class="text-8xl font-black mb-8">Discover Insightful Resources</h1>
+                <h2 class="text-4xl">Explore Curated Content Within <br> the Laravel Ecosystem</h2>
                 {{--                <span class="block mt-16">--}}
                 {{--                    <span class="block text-white">--}}
                 {{--                        <a class="bg-red-500 px-7 py-6 text-2xl font-bold rounded-xl" href="">Subscribe to our newsletter</a>--}}
@@ -102,7 +100,7 @@
                 <div class="flex flex-wrap items-center">
                     @php
                         $tags = [
-                            'Tags',
+                            'Tag Lists',
                             'PHP', 'Beginner', 'Laravel', 'Framework', 'Tutorials', 'Articles', 'SOLID', 'Stripe', 'Artisan', 'Mail', 'Notifications',
                             'Cashier', 'Crypto', 'Novice', 'Library', 'DRY', 'Dependency', 'Refactor', 'Request', 'Enums', 'Repository', 'Queues',
                             'Payments', 'Package', 'Events', 'Intermediate', 'Actions', 'Pusher', 'AWS', 'Docker', 'Vite', 'Vue', 'Providers', 'Advanced'
@@ -110,7 +108,7 @@
                     @endphp
 
                     @foreach($tags as $tag)
-                        <a href="" class="rounded-full  px-6 py-1 inline-block mb-4 mr-2 border @if($tag == 'Tags') {{ 'border-black text-black hover:bg-black hover:text-white' }} @else {{ 'text-red-500 bg-white hover:shadow-xl border-red-500 hover:bg-red-500 hover:text-white' }} @endif">
+                        <a href="" class="rounded-full  px-6 py-1 inline-block mb-4 mr-2 border @if($tag == 'Tag Lists') {{ 'bg-red-500 text-white hover:bg-white hover:border-red-500 hover:text-red-500' }} @else {{ 'text-red-500 bg-white hover:shadow-xl border-red-500 hover:bg-red-500 hover:text-white' }} @endif">
                             {{ $tag }}
                         </a>
                     @endforeach
