@@ -27,7 +27,7 @@
     <section class="mt-12">
         <div class="container mx-auto px-8 md:px-0">
             <header class="text-center my-36">
-                <h1 class="text-8xl font-black mb-8">Discover Insightful Resources</h1>
+                <h1 class="text-7xl font-black mb-8">Discover Insightful Resources</h1>
                 <h2 class="text-4xl">Explore Curated Content Within <br> the Laravel Ecosystem</h2>
                 {{--                <span class="block mt-16">--}}
                 {{--                    <span class="block text-white">--}}
@@ -62,7 +62,7 @@
                                     <img class="rounded-t-md" src="{{ asset($post->post_image->cover_image) }}" alt="">
                                 </span>
                                 <span class="block absolute top-0 right-0 mr-3 font-bold uppercase mt-3">
-                                    <small class="bg-white text-red-400 rounded-full px-4 py-2">
+                                    <small class="bg-white text-red-400 rounded-full px-4 py-2 shadow-md">
                                         {{ $post->category }}
                                     </small>
                                 </span>
@@ -141,7 +141,7 @@
                                     <img class="rounded-t-md" src="{{ asset($post->post_image->cover_image) }}" alt="">
                                 </span>
                                 <span class="block absolute top-0 right-0 mr-3 font-bold uppercase mt-3">
-                                    <small class="bg-white text-red-400 rounded-full px-4 py-2">
+                                    <small class="bg-white text-red-400 rounded-full px-4 py-2 shadow-md">
                                         {{ $post->category }}
                                     </small>
                                 </span>
