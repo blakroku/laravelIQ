@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Tags\HasTags;
+use Spatie\Tags\Tag;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTags;
 
     protected $guarded = [];
 

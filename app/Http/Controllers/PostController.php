@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Author;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -46,6 +47,7 @@ class PostController extends Controller
         $post->post_image()->create(['cover_image' => 'images/cover/' . $coverImageName]);
 
         if (!empty($request->image_url)) $post->credits()->create($request->only('image_url'));
+        $post->attachTags($this->getTags(['me', 'and', 'you']));
 
         return redirect()->route('posts.index')->with('success', 'Post successfully added');
     }
@@ -74,5 +76,10 @@ class PostController extends Controller
     {
         $post->delete();
         return redirect()->route('posts.index')->with('success', 'Post successfully delete');
+    }
+
+    protected function getTags(array $array)
+    {
+        return $array;
     }
 }
