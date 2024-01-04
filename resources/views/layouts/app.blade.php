@@ -4,6 +4,9 @@
 @include('partials._html_head')
 
 <body class="antialiased">
+
+<x-notify::notify />
+
 <nav class="bg-amber-500 py-2 shadow-gray-400 px-8 sm:px-0 md:px-0 lg:px-0">
     <section class="container mx-auto flex justify-between items-center">
         <aside class="flex space-x-12">
@@ -44,5 +47,7 @@
         copyright &copy; {{ date('Y') }} {{ env('APP_NAME') }}. all rights reserved
     </div>
 </footer>
+
+@notifyJs
 </body>
 </html>

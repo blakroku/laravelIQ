@@ -12,6 +12,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/telescope": "^4.16",
         "laravel/tinker": "^2.8",
+        "mckenziearts/laravel-notify": "^2.4",
         "spatie/laravel-tags": "^4.5"
     },
     "require-dev": {

@@ -49,7 +49,9 @@ class PostController extends Controller
         if (!empty($request->image_url)) $post->credits()->create($request->only('image_url'));
         $post->attachTags($this->getTags(['me', 'and', 'you']));
 
-        return redirect()->route('posts.index')->with('success', 'Post successfully added');
+        notify()->success('Post successfully created', 'Success');
+
+        return redirect()->route('posts.index');
     }
 
     public function editPost(Post $post)
@@ -68,14 +70,17 @@ class PostController extends Controller
         ]);
 
         $post->update($data);
+        notify()->success('Post successfully updated', 'Success');
 
-        return redirect()->route('posts.index')->with('success', 'Post successfully updated');
+        return redirect()->route('posts.index');
     }
 
     public function deletePost(Post $post)
     {
         $post->delete();
-        return redirect()->route('posts.index')->with('success', 'Post successfully delete');
+        notify()->warning($post->subject . ' ' . 'has been deleted from the post list.', 'Post successfully deleted');
+
+        return redirect()->route('posts.index');
     }
 
     protected function getTags(array $array)
