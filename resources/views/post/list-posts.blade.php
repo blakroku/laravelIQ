@@ -21,7 +21,7 @@
                                 </svg>
                             </span>
                                 <span>
-                                <a class="hover:underline" href="">
+                                <a class="hover:underline" href="{{ route('posts.show', [$post->id]) }}">
                                     <span>
                                         {{ $post->subject }}
                                     </span>

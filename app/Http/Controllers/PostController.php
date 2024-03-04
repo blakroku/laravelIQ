@@ -54,6 +54,13 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
+    public function showPost(Post $post): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('post.show-post', [
+            'post' => $post,
+        ]);
+    }
+
     public function editPost(Post $post)
     {
         return view('post.edit', ['post' => $post]);

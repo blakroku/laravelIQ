@@ -29,13 +29,16 @@
             <header class="text-center my-36">
                 <h1 class="text-7xl font-black mb-8">Discover Insightful Resources</h1>
                 <h2 class="text-4xl">Explore Curated Content Within <br> the Laravel Ecosystem</h2>
-                {{--                <span class="block mt-16">--}}
-                {{--                    <span class="block text-white">--}}
-                {{--                        <a class="bg-red-500 px-7 py-6 text-2xl font-bold rounded-xl" href="">Subscribe to our newsletter</a>--}}
-                {{--                        <small class="block">Get curated content directly your inbox</small>--}}
-                {{--                    </span>--}}
-                {{--                    <small class="block mt-6 font-light text-gray-600">We promise not to send unsolicited emails to you.</small>--}}
-                {{--                </span>--}}
+
+{{--                Newsletter subscription--}}
+
+{{--                <span class="block mt-8">--}}
+{{--                    <span class="block text-white">--}}
+{{--                        <a class="bg-red-500 px-7 py-6 text-2xl font-bold rounded-xl" href="">Subscribe to our newsletter</a>--}}
+{{--                        <small class="block">Get curated content directly your inbox</small>--}}
+{{--                    </span>--}}
+{{--                    <small class="block mt-6 font-light text-gray-600">We promise not to send unsolicited emails to you.</small>--}}
+{{--                </span>--}}
             </header>
 
             <div id="recent-posts">
